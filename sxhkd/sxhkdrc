@@ -1,0 +1,17 @@
+{_,shift + }Print
+  flameshot {gui,full -p ~/Pictures/Screenshots}
+
+super + i
+    $TERMINAL htop
+
+super + x
+    slock
+
+#XF86MonBrightness{Up,Down}
+#	xbacklight {-inc 3, -dec 3}
+
+XF86Audio{Raise,Lower}Volume
+	pactl set-sink-volume @DEFAULT_SINK@ {+,-}6%
+
+XF86AudioMute
+	pactl set-sink-mute @DEFAULT_SINK@ toggle

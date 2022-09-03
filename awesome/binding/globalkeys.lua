@@ -72,12 +72,16 @@ function _M.get()
 
     --   -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
     -- Standard program
-    awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
-              {description = "open a terminal", group = "launcher"}),
+    -- awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
+    --           {description = "open a terminal", group = "launcher"}),
+    -- awful.key({ modkey, "Shift"   }, "Return", function () awful.spawn('samedir') end,
+    --           {description = "open a terminal in the same directory", group = "launcher"}),
     awful.key({ modkey, "Control" }, "r", awesome.restart,
               {description = "reload awesome", group = "awesome"}),
     awful.key({ modkey, "Shift"   }, "q", awesome.quit,
               {description = "quit awesome", group = "awesome"}),
+    awful.key({ modkey, "Shift"   }, "x", function () awful.spawn('powermenu_t1') end,
+              {description = "Rofi powermenu", group = "Launcher"}),
     --   -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
     -- Applications
     awful.key({ modkey, "Shift" }, "t", function () awful.spawn('flatpak run org.telegram.desktop') end,
@@ -87,8 +91,11 @@ function _M.get()
     awful.key({ modkey, "Shift" }, "s", function () awful.spawn('flatpak run com.slack.Slack') end,
               {description = "Slack", group = "Applications"}),
     awful.key({ modkey, "Shift" }, "w", function ()
-            awful.spawn('chromium-browser --use-gl=desktop --enable-features=VaapiVideoDecoder,VaapiVideoEncoder') end,
+            awful.spawn('google-chrome --use-gl=desktop --enable-features=VaapiVideoDecoder,VaapiVideoEncoder') end,
               {description = "Chromium", group = "Applications"}),
+
+    awful.key({ modkey, }, "v", function () awful.spawn('alacritty -e nvim') end,
+              {description = "Neovim", group = "Applications"}),
 
 
     --   -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
@@ -124,8 +131,8 @@ function _M.get()
 
     --   -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
     -- Prompt
-    awful.key({ modkey },            "r",     function () awful.screen.focused().mypromptbox:run() end,
-              {description = "run prompt", group = "launcher"}),
+    awful.key({ modkey }, "r",function () awful.spawn('launcher_t1') end,
+              {description = "Application launcher", group = "Launcher"}),
 
     --   -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
     -- Resize

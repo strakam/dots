@@ -78,14 +78,14 @@ awful.screen.connect_for_each_screen(function(s)
         s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-            spotify_widget(),
-            volume_widget({
-                device = 'default',
-            }),
-            mykeyboardlayout,
+            -- spotify_widget(),
+            -- volume_widget({
+            --     device = 'default',
+            -- }),
+            -- mykeyboardlayout,
             batteryarc_widget(),
-            brightness_widget(),
-            wibox.widget.systray(),
+            -- brightness_widget(),
+            -- wibox.widget.systray(),
             mytextclock,
             logout_menu_widget(),
         },

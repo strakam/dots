@@ -7,8 +7,23 @@ super + i
 super + x
     slock
 
-#XF86MonBrightness{Up,Down}
-#	xbacklight {-inc 3, -dec 3}
+super + z
+    $TERMINAL -e zfzf
+
+super + Return
+    $TERMINAL
+
+super + f
+    $TERMINAL -e ranger
+
+super + shift + Return
+    samedir
+
+super + r
+    rofi
+
+XF86MonBrightness{Up,Down}
+	xbacklight {-inc 3, -dec 3}
 
 XF86Audio{Raise,Lower}Volume
 	pactl set-sink-volume @DEFAULT_SINK@ {+,-}6%
